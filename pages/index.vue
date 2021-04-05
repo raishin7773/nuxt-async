@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--    {{ users[0].id }},{{ users[0].name }}-->
+    <img src="~/assets/cat.jpg">
     <ul>
       <li v-for="user in users" :key="user.id">
         {{ user.id }},{{ user.name }},{{ user.company.name }}
@@ -11,7 +11,7 @@
 
 <script>
 const axios = require('axios')
-let url = 'https://jsonplaceholder.typicode.com/usersx'
+let url = 'https://jsonplaceholder.typicode.com/users'
 export default {
   asyncData({params,error}) {
     return axios.get(url).then((res) => {
