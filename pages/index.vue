@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{ $store.state.message }}</p>
     <img src="~/assets/cat.jpg">
     <ul>
       <li v-for="user in users" :key="user.id">
@@ -13,7 +14,7 @@
 const axios = require('axios')
 let url = 'https://jsonplaceholder.typicode.com/users'
 export default {
-  asyncData({params,error}) {
+  asyncData({params, error}) {
     return axios.get(url).then((res) => {
       return {users: res.data}
     }).catch(e => {
